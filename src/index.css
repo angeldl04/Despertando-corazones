@@ -1549,3 +1549,214 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* AMOR EN VISTO — identidad visual oficial */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  color: #1D163B;
+  background: #FDFBF7;
+  font-family: "Poppins", sans-serif;
+  --aev-pink: #FF007F;
+  --aev-soft: #FFB5D8;
+  --aev-navy: #1D163B;
+  --aev-sand: #F5E6D3;
+  --aev-cream: #FDFBF7;
+}
+@layer base {
+  body { background: var(--aev-cream); color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+  ::selection { background: var(--aev-soft); color: var(--aev-navy); }
+}
+.app-shell,
+.theme-illusion,
+.theme-storm,
+.theme-workshop,
+.theme-result {
+  background: var(--aev-cream);
+  color: var(--aev-navy);
+}
+.dust { display: none; }
+.site-header {
+  background: rgba(253,251,247,.94);
+  border-bottom: 1px solid rgba(29,22,59,.10);
+  backdrop-filter: blur(14px);
+}
+.brand {
+  color: var(--aev-navy);
+  font-family: "Lovelo", "Arial Narrow", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .035em;
+  line-height: .98;
+}
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 0;
+  color: var(--aev-pink);
+}
+.brand-mark svg { width: 34px; height: 34px; fill: none; stroke: currentColor; stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.desktop-nav { color: var(--aev-navy); font-family: "Poppins", sans-serif; font-size: 10px; }
+.desktop-nav a:hover, .desktop-nav button:hover { color: var(--aev-pink); }
+.mobile-nav { background: var(--aev-cream); color: var(--aev-navy); border-color: var(--aev-soft); }
+.hero {
+  background:
+    radial-gradient(ellipse at 78% 22%, rgba(255,181,216,.35), transparent 36%),
+    var(--aev-cream);
+}
+.eyebrow { color: var(--aev-pink); font-family: "Poppins", sans-serif; letter-spacing: .12em; }
+.hero h1, .manifesto h2, .section-heading h2, .home-cta h2,
+.question-panel h2, .storm-heading h2, .workshop-heading h2,
+.result-intro h2, .step-card h3, .lesson-modal h3 {
+  font-family: "Lovelo", "Arial Narrow", "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: .98;
+}
+.hero h1 { color: var(--aev-navy); font-size: clamp(58px, 8.5vw, 120px); }
+.hero h1 em, .section-heading h2 em, .storm-heading h2 em, .workshop-heading h2 em { color: var(--aev-pink); font-style: normal; }
+.hero-lead { color: #514A68; font-family: "Poppins", sans-serif; font-size: clamp(16px,1.25vw,19px); line-height: 1.75; }
+.primary-btn {
+  color: white;
+  background: var(--aev-pink);
+  border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(255,0,127,.18);
+  font-family: "Poppins", sans-serif;
+}
+.primary-btn:hover:not(:disabled) { background: #D90069; box-shadow: 0 12px 28px rgba(255,0,127,.24); }
+.secondary-btn { border: 1px solid var(--aev-soft); border-radius: 999px; color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+.secondary-btn:hover { border-color: var(--aev-pink); color: var(--aev-pink); }
+.hero-visual::before, .hero-visual::after { border-color: rgba(255,0,127,.13); }
+.hero-visual::after { border-style: solid; }
+.heart-art.brand-heart { width: min(36vw, 500px); overflow: visible; filter: drop-shadow(0 15px 24px rgba(255,0,127,.12)); }
+.heart-ribbon { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 25; }
+.heart-ribbon-pink { stroke: url(#ribbonPink); }
+.heart-ribbon-soft, .heart-ribbon-soft-top { stroke: url(#ribbonSoft); }
+.heart-break-dot { fill: var(--aev-pink); }
+.heart-art .heart-ribbon-pink { stroke-dasharray: 1; }
+.orbit-label { color: var(--aev-navy); font-family: "Poppins", sans-serif; font-weight: 600; letter-spacing: .16em; }
+.vertical-note { color: var(--aev-pink); font-family: "Poppins", sans-serif; }
+.scroll-hint { color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+.manifesto {
+  background: var(--aev-soft);
+  color: var(--aev-navy);
+}
+.section-index { color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+.manifesto h2 { color: var(--aev-navy); }
+.manifesto div p { color: var(--aev-pink); font-family: "Poppins", sans-serif; font-weight: 600; }
+.manifesto blockquote { color: var(--aev-navy); border-color: var(--aev-pink); font-family: "Poppins", sans-serif; font-size: clamp(17px,2vw,22px); }
+.dynamic-section { background: var(--aev-cream); }
+.section-heading h2 { color: var(--aev-navy); }
+.steps-grid { border-color: rgba(29,22,59,.18); }
+.step-card { border-color: rgba(29,22,59,.18); }
+.step-card:hover { background: rgba(255,181,216,.16); }
+.step-top { color: var(--aev-pink); }
+.step-card h3 { color: var(--aev-navy); }
+.step-card p { color: #625B76; font-family: "Poppins", sans-serif; }
+.step-card a { color: var(--aev-pink); }
+.home-cta {
+  min-height: 58vh;
+  background: var(--aev-navy);
+  color: var(--aev-cream);
+  overflow: hidden;
+}
+.home-cta::before {
+  content: "";
+  position: absolute;
+  width: 420px; height: 420px;
+  border: 2px solid rgba(255,181,216,.22);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(255,181,216,.06), 0 0 0 75px rgba(255,181,216,.04);
+}
+.home-cta > svg { color: var(--aev-soft); z-index: 1; }
+.home-cta h2 { z-index: 1; }
+.home-cta .primary-btn { z-index: 1; }
+.experience { color: var(--aev-navy); }
+.phase-progress { color: #776F8B; font-family: "Poppins", sans-serif; }
+.phase-progress div { background: rgba(29,22,59,.14); }
+.phase-progress i { background: var(--aev-pink); }
+.back-btn { color: #655D78; font-family: "Poppins", sans-serif; }
+.phase-visual::before { background: radial-gradient(circle, rgba(255,181,216,.4), transparent 68%); }
+.floating-copy { color: #746B85; font-family: "Poppins", sans-serif; }
+.visual-count { color: rgba(29,22,59,.15); font-family: "Lovelo", sans-serif; }
+.question-panel h2 { color: var(--aev-navy); }
+.options { border-color: rgba(29,22,59,.16); }
+.options button { border-color: rgba(29,22,59,.16); color: #625B76; font-family: "Poppins", sans-serif; }
+.options button > span { color: var(--aev-pink); }
+.options button svg { color: var(--aev-pink); }
+.options button:hover, .options button.selected { color: var(--aev-navy); background: rgba(255,181,216,.2); }
+.options button.selected { border-color: var(--aev-pink); }
+.phase-storm { background: linear-gradient(135deg, rgba(255,181,216,.22), transparent 60%); }
+.storm-heading .eyebrow { color: var(--aev-pink); }
+.storm-heading h2, .workshop-heading h2 { color: var(--aev-navy); }
+.storm-heading h2 em, .workshop-heading h2 em { color: var(--aev-pink); }
+.storm-heading > p:last-child, .workshop-heading > p:last-child { color: #655D78; font-family: "Poppins", sans-serif; }
+.fragments-stage::before { background: radial-gradient(circle, rgba(255,181,216,.24), transparent 58%); }
+.rain { opacity: .12; background: repeating-linear-gradient(110deg, transparent 0 55px, rgba(255,0,127,.22) 56px, transparent 57px 105px); }
+.fragment-shape { background: linear-gradient(145deg, #FFB5D8, #FDFBF7); color: var(--aev-pink); border: 1px solid rgba(255,0,127,.25); clip-path: none; border-radius: 22px 22px 22px 5px; }
+.fragment-1 .fragment-shape, .fragment-2 .fragment-shape, .fragment-3 .fragment-shape, .fragment-4 .fragment-shape { clip-path: none; }
+.fragment-text strong { color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+.fragment-text small { color: #655D78; font-family: "Poppins", sans-serif; }
+.revealed .fragment-shape { color: white; background: var(--aev-pink); }
+.storm-center { color: #655D78; font-family: "Poppins", sans-serif; }
+.storm-center span { color: var(--aev-pink); font-family: "Lovelo", sans-serif; }
+.storm-center small { color: #776F8B; }
+.phase-bottom p { color: #655D78; font-family: "Poppins", sans-serif; }
+.assembly::before { border-color: rgba(255,0,127,.18); box-shadow: inset 0 0 80px rgba(255,181,216,.12); }
+.assembly .heart-art { opacity: .18; filter: grayscale(0); }
+.assembly.complete .heart-art { opacity: 1; filter: drop-shadow(0 0 30px rgba(255,0,127,.2)); }
+.loose-piece { color: var(--aev-pink); background: linear-gradient(145deg, #FFB5D8, #FDFBF7); clip-path: none; border: 1px solid rgba(255,0,127,.2); border-radius: 18px 18px 18px 4px; }
+.placed-dot { border-color: var(--aev-pink); color: var(--aev-pink); background: var(--aev-cream); }
+.assembly-status { color: #655D78; }
+.assembly-status strong { color: var(--aev-pink); font-family: "Lovelo", sans-serif; }
+.sealed-message { color: var(--aev-pink); }
+.lesson-overlay { background: rgba(29,22,59,.65); }
+.lesson-modal { background: var(--aev-cream); color: var(--aev-navy); border: 1px solid var(--aev-soft); border-radius: 24px; box-shadow: 0 25px 80px rgba(29,22,59,.18); }
+.modal-close { color: var(--aev-navy); }
+.modal-number { color: var(--aev-pink); font-family: "Lovelo", sans-serif; }
+.lesson-modal h3 { color: var(--aev-navy); }
+.lesson-options { border-color: rgba(29,22,59,.16); }
+.lesson-options button { border-color: rgba(29,22,59,.16); color: var(--aev-navy); font-family: "Poppins", sans-serif; }
+.lesson-options button:hover { color: var(--aev-pink); }
+.lesson-modal label { color: #655D78; font-family: "Poppins", sans-serif; }
+.custom-input { border-color: var(--aev-soft); border-radius: 12px; overflow: hidden; }
+.custom-input input { color: var(--aev-navy); background: white; font-family: "Poppins", sans-serif; }
+.custom-input button { background: var(--aev-pink); }
+.result-section { color: var(--aev-navy); }
+.result-intro h2 { color: var(--aev-navy); }
+.result-intro > p:last-child { color: #655D78; font-family: "Poppins", sans-serif; }
+.share-card {
+  background: var(--aev-cream);
+  color: var(--aev-navy);
+  border: 1px solid var(--aev-soft);
+  border-radius: 24px;
+  box-shadow: 0 20px 65px rgba(29,22,59,.12);
+}
+.share-card::before { border-color: rgba(255,0,127,.12); border-radius: 16px; }
+.card-brand { color: var(--aev-pink); font-family: "Poppins", sans-serif; font-weight: 700; }
+.card-title { color: var(--aev-navy); font-family: "Lovelo", "Arial Narrow", sans-serif; }
+.card-title em { color: var(--aev-pink); font-style: normal; }
+.share-card .heart-art { filter: drop-shadow(0 12px 20px rgba(255,0,127,.13)); }
+.archetype span { color: #776F8B; font-family: "Poppins", sans-serif; }
+.archetype strong { color: var(--aev-navy); font-family: "Lovelo", sans-serif; font-style: normal; }
+.share-card blockquote { border-color: var(--aev-soft); color: #514A68; font-family: "Poppins", sans-serif; }
+.card-social { color: var(--aev-pink); font-family: "Poppins", sans-serif; }
+.card-social span { color: #776F8B; }
+.result-actions .social-btn { border: 1px solid var(--aev-soft); border-radius: 999px; color: var(--aev-pink); font-family: "Poppins", sans-serif; }
+.text-btn { color: #655D78; font-family: "Poppins", sans-serif; }
+.result-actions > p { color: #776F8B; font-family: "Poppins", sans-serif; }
+.site-footer { background: var(--aev-cream); border-color: rgba(29,22,59,.12); color: #655D78; }
+.site-footer p { color: #655D78; font-family: "Poppins", sans-serif; font-style: normal; }
+.site-footer a { color: var(--aev-pink); }
+.site-footer .brand { color: var(--aev-navy); }
+
+@media (max-width: 900px) {
+  .heart-art.brand-heart { width: min(80vw, 420px); }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 58px; }
+  .heart-art.brand-heart { width: 310px; }
+  .home-cta::before { width: 280px; height: 280px; }
+}
