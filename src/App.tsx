@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 
 // Edita aquí la identidad y los enlaces oficiales de la iniciativa.
-const SOCIAL_HANDLE = "@amorenvisto";
+const SOCIAL_HANDLE = "@amor_envisto";
 const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/amorenvisto",
+  instagram: "https://www.instagram.com/amor_envisto?bqrl=MTlrdjJ6cG81b2NmOA%3D%3D&utm_source=qr",
   tiktok: "https://tiktok.com/@amorenvisto",
 };
 
