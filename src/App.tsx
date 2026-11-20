@@ -119,7 +119,12 @@ function Brand() {
       aria-label="Ir al inicio"
     >
       <span className="brand-mark">
-        <svg viewBox="0 0 40 38" aria-hidden="true"><path d="M21 5C29 -1 38 6 36 15C34 22 27 29 20 34"/><path d="M20 34C11 27 3 20 4 12C5 4 14 1 20 8"/></svg>
+        <svg viewBox="0 0 48 44" aria-hidden="true">
+          <defs><linearGradient id="brandRibbon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#FF007F"/><stop offset="1" stopColor="#FFB5D8"/></linearGradient></defs>
+          <path d="M24 38C15 31 5 23 5 14 5 6 14 2 21 8c2 2 3 4 4 6" />
+          <path d="M24 38C33 30 43 22 43 14 43 6 34 2 27 8c-2 2-3 4-4 6" />
+          <path d="M13 10C17 7 21 9 24 15c3 6 7 8 12 6" className="brand-ribbon-cross" />
+        </svg>
       </span>
       <span>
         AMOR
@@ -152,10 +157,11 @@ function HeartArtwork({
         </linearGradient>
         <filter id="ribbonGlow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
-      <path className="heart-ribbon heart-ribbon-soft" d="M238 65 C286 28 350 65 350 123 C350 178 291 235 213 310" />
-      <path className="heart-ribbon heart-ribbon-pink" d="M207 310 C135 252 70 192 70 126 C70 68 132 34 183 68 C199 79 208 91 216 106" />
-      <path className="heart-ribbon heart-ribbon-soft-top" d="M216 106 C230 76 252 58 278 57" />
-      <circle className="heart-break-dot" cx="291" cy="57" r="5" />
+      <path className="heart-ribbon heart-ribbon-pink" d="M210 319C151 272 73 207 73 130C73 75 125 39 174 61C199 72 211 96 220 117" />
+      <path className="heart-ribbon heart-ribbon-soft" d="M210 319C271 270 347 207 347 130C347 75 295 39 246 61C221 72 209 96 200 117" />
+      <path className="heart-ribbon heart-ribbon-cross" d="M174 61C195 68 209 85 220 117C231 149 250 164 279 166" />
+      <path className="heart-ribbon heart-ribbon-pink" d="M200 117C189 149 170 164 141 166" />
+      <circle className="heart-break-dot" cx="279" cy="166" r="5" />
     </svg>
   );
 }
