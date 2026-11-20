@@ -14,10 +14,10 @@ import {
 } from "lucide-react";
 
 // Edita aquí la identidad y los enlaces oficiales de la iniciativa.
-const SOCIAL_HANDLE = "@despertandocorazones";
+const SOCIAL_HANDLE = "@amorenvisto";
 const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/despertandocorazones",
-  tiktok: "https://instagram.com/despertandocorazones",
+  instagram: "https://instagram.com/amorenvisto",
+  tiktok: "https://tiktok.com/@amorenvisto",
 };
 
 // Preguntas y respuestas de la fase de idealización.
@@ -119,12 +119,12 @@ function Brand() {
       aria-label="Ir al inicio"
     >
       <span className="brand-mark">
-        <Heart size={15} strokeWidth={1.7} />
+        <svg viewBox="0 0 40 38" aria-hidden="true"><path d="M21 5C29 -1 38 6 36 15C34 22 27 29 20 34"/><path d="M20 34C11 27 3 20 4 12C5 4 14 1 20 8"/></svg>
       </span>
       <span>
-        Despertando
+        AMOR
         <br />
-        Corazones
+        EN VISTO
       </span>
     </button>
   );
@@ -140,71 +140,22 @@ function HeartArtwork({
   className?: string;
 }) {
   return (
-    <svg
-      className={`heart-art ${repaired ? "is-repaired" : ""} ${className}`}
-      viewBox="0 0 420 390"
-      role="img"
-      aria-label={repaired ? "Corazón reparado con vetas de oro" : "Corazón de cristal creciendo"}
-    >
+    <svg className={`heart-art brand-heart ${repaired ? "is-repaired" : ""} ${className}`} viewBox="0 0 420 390" role="img" aria-label="Corazón entrelazado de Amor en Visto">
       <defs>
-        <radialGradient id="heartFill" cx="45%" cy="25%" r="75%">
-          <stop offset="0%" stopColor="#ffe9d5" />
-          <stop offset="45%" stopColor="#e4a8a3" />
-          <stop offset="100%" stopColor="#893f4b" />
-        </radialGradient>
-        <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-          <stop stopColor="#fff2a8" />
-          <stop offset=".45" stopColor="#d4af37" />
-          <stop offset="1" stopColor="#fb8f24" />
+        <linearGradient id="ribbonPink" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#FF007F" />
+          <stop offset="1" stopColor="#D90069" />
         </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="8" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
+        <linearGradient id="ribbonSoft" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="#FFD0E5" />
+          <stop offset="1" stopColor="#FFB5D8" />
+        </linearGradient>
+        <filter id="ribbonGlow"><feGaussianBlur stdDeviation="7" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
       </defs>
-      {stage > 0 && (
-        <path
-          className="heart-halo"
-          d="M210 345C117 280 56 225 60 142 64 62 158 34 210 105 262 34 356 62 360 142 364 225 303 280 210 345Z"
-        />
-      )}
-      <path
-        className="heart-main"
-        d="M210 345C117 280 56 225 60 142 64 62 158 34 210 105 262 34 356 62 360 142 364 225 303 280 210 345Z"
-        fill="url(#heartFill)"
-      />
-      {stage > 1 && (
-        <path
-          className="heart-layer layer-one"
-          d="M210 311C139 260 92 215 94 153 97 100 157 79 210 137 263 79 323 100 326 153 328 215 281 260 210 311Z"
-        />
-      )}
-      {stage > 2 && (
-        <path
-          className="heart-layer layer-two"
-          d="M210 273C165 239 137 207 139 166 141 134 176 120 210 160 244 120 279 134 281 166 283 207 255 239 210 273Z"
-        />
-      )}
-      <path className="shine" d="M112 119C131 80 174 84 191 111" />
-      {repaired && (
-        <g
-          className="gold-seams"
-          fill="none"
-          stroke="url(#gold)"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          filter="url(#glow)"
-        >
-          <path d="M207 103L197 145 218 177 195 213 218 246 204 288 211 340" />
-          <path d="M198 145L155 158 126 147 91 161 63 146" />
-          <path d="M218 177L258 159 284 126 337 118" />
-          <path d="M195 213L159 229 126 263" />
-          <path d="M218 246L259 260 290 289" />
-        </g>
-      )}
+      <path className="heart-ribbon heart-ribbon-soft" d="M238 65 C286 28 350 65 350 123 C350 178 291 235 213 310" />
+      <path className="heart-ribbon heart-ribbon-pink" d="M207 310 C135 252 70 192 70 126 C70 68 132 34 183 68 C199 79 208 91 216 106" />
+      <path className="heart-ribbon heart-ribbon-soft-top" d="M216 106 C230 76 252 58 278 57" />
+      <circle className="heart-break-dot" cx="291" cy="57" r="5" />
     </svg>
   );
 }
@@ -278,29 +229,29 @@ function App() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     const bg = ctx.createLinearGradient(0, 0, 1080, 1920);
-    bg.addColorStop(0, "#211818");
-    bg.addColorStop(1, "#0e0d0d");
+    bg.addColorStop(0, "#FDFBF7");
+    bg.addColorStop(1, "#F5E6D3");
     ctx.fillStyle = bg;
     ctx.fillRect(0, 0, 1080, 1920);
-    ctx.strokeStyle = "#6b5630";
+    ctx.strokeStyle = "#FFB5D8";
     ctx.lineWidth = 2;
     ctx.strokeRect(54, 54, 972, 1812);
     ctx.textAlign = "center";
-    ctx.fillStyle = "#d4af37";
+    ctx.fillStyle = "#FF007F";
     ctx.font = "500 26px Arial";
-    ctx.fillText("DESPERTANDO CORAZONES", 540, 145);
-    ctx.fillStyle = "#f6eee3";
+    ctx.fillText("AMOR EN VISTO", 540, 145);
+    ctx.fillStyle = "#1D163B";
     ctx.font = "italic 66px Georgia";
-    ctx.fillText("Mi cicatriz", 540, 275);
-    ctx.fillText("también cuenta mi historia", 540, 350);
+    ctx.fillText("Mi historia", 540, 275);
+    ctx.fillText("también merece ser escuchada", 540, 350);
     drawCanvasHeart(ctx, 540, 820, 1.75);
-    ctx.fillStyle = "#bba37d";
+    ctx.fillStyle = "#1D163B";
     ctx.font = "500 23px Arial";
-    ctx.fillText("MI ARQUETIPO", 540, 1320);
-    ctx.fillStyle = "#f6eee3";
+    ctx.fillText("LO QUE ME LLEVO", 540, 1320);
+    ctx.fillStyle = "#1D163B";
     ctx.font = "italic 58px Georgia";
     ctx.fillText(archetype, 540, 1390);
-    ctx.strokeStyle = "#7e6335";
+    ctx.strokeStyle = "#FFB5D8";
     ctx.beginPath();
     ctx.moveTo(410, 1450);
     ctx.lineTo(670, 1450);
@@ -308,14 +259,14 @@ function App() {
     const lesson = lessons.find(Boolean) || "De cada grieta también nace luz.";
     ctx.font = "italic 36px Georgia";
     wrapText(ctx, `“${lesson}”`, 540, 1535, 780, 50);
-    ctx.fillStyle = "#d4af37";
+    ctx.fillStyle = "#FF007F";
     ctx.font = "500 27px Arial";
     ctx.fillText(SOCIAL_HANDLE, 540, 1765);
-    ctx.fillStyle = "#a99d8c";
+    ctx.fillStyle = "#1D163B";
     ctx.font = "22px Arial";
-    ctx.fillText("#DespertandoCorazones", 540, 1810);
+    ctx.fillText("#AmorEnVisto", 540, 1810);
     const link = document.createElement("a");
-    link.download = "mi-corazon-kintsugi.png";
+    link.download = "mi-historia-amor-en-visto.png";
     link.href = canvas.toDataURL("image/png");
     link.click();
   };
@@ -411,7 +362,7 @@ function App() {
       </main>
       <footer className="site-footer">
         <Brand />
-        <p>Una experiencia para sentir, nombrar y transformar.</p>
+        <p>Un espacio para hablar del amor con honestidad.</p>
         <div>
           <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noreferrer">
             <InstagramIcon size={17} /> {SOCIAL_HANDLE}
@@ -429,16 +380,15 @@ function Home({ onStart }: { onStart: () => void }) {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">
-            <Sparkles size={14} /> Una experiencia interactiva
+            <Sparkles size={14} /> Empatía · Catarsis · Realidad digital
           </p>
           <h1>
-            Despertando
+            AMOR
             <br />
-            <em>Corazones</em>
+            <em>EN VISTO</em>
           </h1>
           <p className="hero-lead">
-            Entre el amor que imaginamos y el que realmente vivimos, hay una grieta. Tal vez por ahí
-            también pueda entrar la luz.
+            A veces una conversación se queda en visto. Aquí, cada historia merece ser escuchada, cada emoción tiene un lugar y ningún corazón tiene que fingir que está bien.
           </p>
           <div className="hero-actions">
             <button className="primary-btn" onClick={onStart}>
@@ -455,11 +405,11 @@ function Home({ onStart }: { onStart: () => void }) {
           </div>
         </div>
         <div className="hero-visual">
-          <span className="orbit-label label-a">IDEALIZAR</span>
-          <span className="orbit-label label-b">ROMPER</span>
-          <span className="orbit-label label-c">RECONSTRUIR</span>
+          <span className="orbit-label label-a">ILUSIONARSE</span>
+          <span className="orbit-label label-b">QUEDAR EN VISTO</span>
+          <span className="orbit-label label-c">VOLVER A TI</span>
           <HeartArtwork stage={3} repaired />
-          <div className="vertical-note">KINTSUGI EMOCIONAL · 2025</div>
+          <div className="vertical-note">EMPATÍA · CATARSIS · REALIDAD DIGITAL</div>
         </div>
         <button
           className="scroll-hint"
@@ -467,7 +417,7 @@ function Home({ onStart }: { onStart: () => void }) {
             document.getElementById("manifiesto")?.scrollIntoView({ behavior: "smooth" })
           }
         >
-          Descubre el movimiento <ArrowDown size={16} />
+          Descubre el espacio <ArrowDown size={16} />
         </button>
       </section>
 
@@ -475,24 +425,24 @@ function Home({ onStart }: { onStart: () => void }) {
         <p className="section-index">01 — MANIFIESTO</p>
         <div>
           <h2>
-            No escondemos
+            Lo que duele
             <br />
-            las grietas.
+            también se cuenta.
           </h2>
-          <p>Las iluminamos.</p>
+          <p>Aquí te escuchamos.</p>
         </div>
         <blockquote>
-          “El corazón no vuelve a ser el mismo. Se vuelve más consciente, más honesto, más suyo.”
+          “No todas las historias tienen respuesta, pero todas merecen ser escuchadas.”
         </blockquote>
       </section>
 
       <section className="dynamic-section" id="dinamica">
         <div className="section-heading">
-          <p className="eyebrow">Del mundo interior a la conversación colectiva</p>
+          <p className="eyebrow">Un espacio para hablar sin filtros</p>
           <h2>
-            La dinámica
+            Hablemos
             <br />
-            <em>en redes</em>
+            <em>de amor</em>
           </h2>
         </div>
         <div className="steps-grid">
@@ -500,17 +450,17 @@ function Home({ onStart }: { onStart: () => void }) {
             [
               "01",
               "Explora tu historia",
-              "Vive el recorrido interactivo y construye, rompe y repara tu propio corazón Kintsugi.",
+              "Recorre tus expectativas, reconoce lo que dolió y encuentra palabras para contar tu historia.",
             ],
             [
               "02",
-              "Comparte tu cicatriz de oro",
-              `Descarga tu tarjeta, súbela a tus historias y etiqueta a ${SOCIAL_HANDLE} con #DespertandoCorazones.`,
+              "Pon tu historia en palabras",
+              `Descarga tu reflexión, compártela y abre una conversación con #AmorEnVisto.`,
             ],
             [
               "03",
               "Conversa en comunidad",
-              "Lee historias anónimas, confesiones y reflexiones que compartimos cada semana.",
+              "Escucha otras experiencias y descubre que no estás a solas con lo que sientes.",
             ],
           ].map(([n, title, text], i) => (
             <article className="step-card" key={n}>
@@ -532,12 +482,12 @@ function Home({ onStart }: { onStart: () => void }) {
       <section className="home-cta">
         <Heart size={28} />
         <h2>
-          ¿Qué harás con
+          ¿Qué se quedó
           <br />
-          tus grietas?
+          sin decir?
         </h2>
         <button className="primary-btn" onClick={onStart}>
-          Comenzar mi viaje <ArrowRight size={18} />
+          Contar mi historia <ArrowRight size={18} />
         </button>
       </section>
     </>
@@ -572,16 +522,16 @@ function IllusionPhase({
   const item = ILLUSION_QUESTIONS[question];
   return (
     <section className="experience phase-illusion">
-      <Progress phase={1} label="EL JARDÍN DE LAS ILUSIONES" />
+      <Progress phase={1} label="LO QUE IMAGINAMOS" />
       <button className="back-btn" onClick={onBack}>
         <ArrowLeft size={16} /> Atrás
       </button>
       <div className="phase-grid">
         <div className="phase-visual">
           <p className="floating-copy">
-            Cada expectativa
+            Todo comienza
             <br />
-            hace crecer la ilusión.
+            con lo que esperamos.
           </p>
           <HeartArtwork stage={question + (selected !== undefined ? 1 : 0)} />
           <span className="visual-count">0{question + 1}</span>
@@ -757,8 +707,8 @@ function WorkshopPhase(props: {
               <X />
             </button>
             <span className="modal-number">0{props.activePiece + 1}</span>
-            <p className="eyebrow">Dale oro a esta grieta</p>
-            <h3>¿Qué aprendiste de esta parte de tu historia?</h3>
+            <p className="eyebrow">Lo que aprendiste también importa</p>
+            <h3>¿Qué te gustaría llevarte de esta experiencia?</h3>
             <div className="lesson-options">
               {LESSON_SUGGESTIONS.slice(0, 3).map((item) => (
                 <button key={item} onClick={() => props.onLesson(item)}>
@@ -806,32 +756,32 @@ function Result({
     <section className="result-section">
       <div className="result-intro">
         <p className="eyebrow">
-          <Sparkles size={14} /> Tu corazón ha despertado
+          <Sparkles size={14} /> Tu historia merece ser escuchada
         </p>
         <h2>
-          No volviste a ser
+          No tienes que
           <br />
-          quien eras.
+          tener todas las respuestas.
         </h2>
-        <p>Te convertiste en alguien que conoce sus grietas y aun así elige brillar.</p>
+        <p>Lo que sentiste es válido. Gracias por darte el espacio de reconocerlo y ponerlo en palabras.</p>
       </div>
       <div className="share-card">
-        <span className="card-brand">DESPERTANDO CORAZONES</span>
+        <span className="card-brand">AMOR EN VISTO</span>
         <div className="card-title">
-          Mi cicatriz
+          Mi historia
           <br />
-          <em>también cuenta mi historia</em>
+          <em>también merece ser escuchada</em>
         </div>
         <HeartArtwork stage={3} repaired />
         <div className="archetype">
-          <span>MI ARQUETIPO</span>
+          <span>LO QUE ME LLEVO</span>
           <strong>{archetype}</strong>
         </div>
         <blockquote>“{lesson}”</blockquote>
         <div className="card-social">
           {SOCIAL_HANDLE}
           <br />
-          <span>#DespertandoCorazones</span>
+          <span>#AmorEnVisto</span>
         </div>
       </div>
       <div className="result-actions">
@@ -844,7 +794,7 @@ function Result({
         <button className="text-btn" onClick={onReset}>
           <RefreshCcw size={15} /> Volver a empezar
         </button>
-        <p>Comparte tu resultado en historias y etiquétanos para ser parte del movimiento.</p>
+        <p>Comparte tu reflexión y abre espacio para conversaciones más honestas sobre el amor.</p>
       </div>
     </section>
   );
@@ -858,13 +808,13 @@ function drawCanvasHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, 
     "M210 345C117 280 56 225 60 142 64 62 158 34 210 105 262 34 356 62 360 142 364 225 303 280 210 345Z",
   );
   const fill = ctx.createRadialGradient(170, 100, 10, 210, 200, 180);
-  fill.addColorStop(0, "#ffe9d5");
-  fill.addColorStop(0.45, "#d3938f");
-  fill.addColorStop(1, "#713541");
+  fill.addColorStop(0, "#FFB5D8");
+  fill.addColorStop(0.45, "#FF007F");
+  fill.addColorStop(1, "#1D163B");
   ctx.fillStyle = fill;
   ctx.fill(path);
   ctx.lineWidth = 5;
-  ctx.strokeStyle = "#e5bd48";
+  ctx.strokeStyle = "#FFB5D8";
   const cracks = [
     [
       [207, 103],
