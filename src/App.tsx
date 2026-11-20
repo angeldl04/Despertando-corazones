@@ -49,14 +49,14 @@ const FRACTURES = [
   },
   {
     title: "El silencio repentino",
-    note: "Las preguntas también dejaron cicatriz.",
+    note: "A veces, el silencio también duele.",
     x: "61%",
     y: "10%",
     rotate: 13,
   },
   {
-    title: "Promesas a medias",
-    note: "Hubo futuros que sólo vivieron en palabras.",
+    title: "Conversaciones inconclusas",
+    note: "Hay palabras que nunca llegaron a enviarse.",
     x: "37%",
     y: "39%",
     rotate: -3,
@@ -574,7 +574,7 @@ function StormPhase({
 }) {
   return (
     <section className="experience phase-storm">
-      <Progress phase={2} label="LA TORMENTA Y EL QUIEBRE" />
+      <Progress phase={2} label="LO QUE QUEDÓ EN VISTO" />
       <div className="storm-heading">
         <p className="eyebrow">Cuando la imagen se encuentra con lo real</p>
         <h2>
@@ -620,8 +620,8 @@ function StormPhase({
       <div className="phase-bottom">
         <p>
           {discovered.length < 5
-            ? `Aún quedan ${5 - discovered.length} verdades por mirar.`
-            : "Ya miraste todas las grietas. Es hora de recogerlas."}
+            ? `Aún quedan ${5 - discovered.length} historias por descubrir.`
+            : "Ya escuchaste todas las historias. Es momento de reconocer lo que te dejaron."}
         </p>
         <button className="primary-btn" disabled={discovered.length < 5} onClick={onNext}>
           Recoger los fragmentos <ArrowRight size={18} />
@@ -645,7 +645,7 @@ function WorkshopPhase(props: {
   const complete = props.assembled.length === 5;
   return (
     <section className="experience phase-workshop">
-      <Progress phase={3} label="EL TALLER DE KINTSUGI" />
+      <Progress phase={3} label="LO QUE NOS DEJA LA HISTORIA" />
       <div className="workshop-heading">
         <p className="eyebrow">Reconstruir no es volver atrás</p>
         <h2>
@@ -678,7 +678,7 @@ function WorkshopPhase(props: {
         ))}
         {complete && (
           <div className="sealed-message">
-            <Sparkles size={16} /> Las grietas ahora cuentan tu fuerza
+            <Sparkles size={16} /> Cada historia deja algo en nosotros
           </div>
         )}
       </div>
@@ -804,56 +804,38 @@ function drawCanvasHeart(ctx: CanvasRenderingContext2D, cx: number, cy: number, 
   ctx.save();
   ctx.translate(cx - 210 * scale, cy - 195 * scale);
   ctx.scale(scale, scale);
-  const path = new Path2D(
-    "M210 345C117 280 56 225 60 142 64 62 158 34 210 105 262 34 356 62 360 142 364 225 303 280 210 345Z",
-  );
-  const fill = ctx.createRadialGradient(170, 100, 10, 210, 200, 180);
-  fill.addColorStop(0, "#FFB5D8");
-  fill.addColorStop(0.45, "#FF007F");
-  fill.addColorStop(1, "#1D163B");
-  ctx.fillStyle = fill;
-  ctx.fill(path);
-  ctx.lineWidth = 5;
-  ctx.strokeStyle = "#FFB5D8";
-  const cracks = [
-    [
-      [207, 103],
-      [197, 145],
-      [218, 177],
-      [195, 213],
-      [218, 246],
-      [204, 288],
-      [211, 340],
-    ],
-    [
-      [198, 145],
-      [155, 158],
-      [126, 147],
-      [91, 161],
-      [63, 146],
-    ],
-    [
-      [218, 177],
-      [258, 159],
-      [284, 126],
-      [337, 118],
-    ],
-    [
-      [195, 213],
-      [159, 229],
-      [126, 263],
-    ],
-    [
-      [218, 246],
-      [259, 260],
-      [290, 289],
-    ],
-  ];
-  cracks.forEach((line) => {
-    ctx.beginPath();
-    line.forEach(([x, y], i) => (i ? ctx.lineTo(x, y) : ctx.moveTo(x, y)));
-    ctx.stroke();
-  });
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.lineWidth = 23;
+  const pink = ctx.createLinearGradient(70, 40, 220, 330);
+  pink.addColorStop(0, "#FF007F");
+  pink.addColorStop(1, "#D90069");
+  const soft = ctx.createLinearGradient(220, 45, 350, 310);
+  soft.addColorStop(0, "#FFD0E5");
+  soft.addColorStop(1, "#FFB5D8");
+  ctx.strokeStyle = soft;
+  ctx.beginPath();
+  ctx.moveTo(238, 65);
+  ctx.bezierCurveTo(286, 28, 350, 65, 350, 123);
+  ctx.bezierCurveTo(350, 178, 291, 235, 213, 310);
+  ctx.stroke();
+  ctx.strokeStyle = pink;
+  ctx.beginPath();
+  ctx.moveTo(207, 310);
+  ctx.bezierCurveTo(135, 252, 70, 192, 70, 126);
+  ctx.bezierCurveTo(70, 68, 132, 34, 183, 68);
+  ctx.quadraticCurveTo(207, 84, 216, 106);
+  ctx.stroke();
+  ctx.strokeStyle = soft;
+  ctx.lineWidth = 18;
+  ctx.beginPath();
+  ctx.moveTo(216, 106);
+  ctx.quadraticCurveTo(239, 62, 278, 57);
+  ctx.stroke();
+  ctx.fillStyle = "#FF007F";
+  ctx.beginPath();
+  ctx.arc(291, 57, 5, 0, Math.PI * 2);
+  ctx.fill();
   ctx.restore();
 }
 
